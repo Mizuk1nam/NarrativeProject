@@ -9,7 +9,7 @@ namespace NarrativeProject.Rooms
 @"You are in your bedroom.
 The [door] in front of you leads to your living room.
 Your private [bathroom] is to your left.
-From your closet, you see the [attic]
+You know the entrance to your attic is in the bathroom
 Another door leads you to your [living room].
 ";
 
@@ -36,10 +36,7 @@ Another door leads you to your [living room].
                         Game.Finish();
                     }
                     break;
-                case "attic":
-                    Console.WriteLine("You go up and enter your attic.");
-                    Game.Transition<AtticRoom>();
-                    break;
+               
                 default:
                     Console.WriteLine("Invalid command.");
                     break;
