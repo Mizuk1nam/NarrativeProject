@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NarrativeProject
 {
@@ -49,5 +50,16 @@ namespace NarrativeProject
                 }
             }
         }
+        public class codeGen
+        {
+            private Random _random = new Random();
+
+            public string genCode()
+            {
+                int randomInt = _random.Next(1000, 10000);
+                return randomInt.ToString();
+            }
+        }
     }
-}
+} 
+

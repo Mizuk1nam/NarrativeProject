@@ -1,5 +1,7 @@
 ﻿using NarrativeProject.Rooms;
 using System;
+using System.Xml.Serialization;
+using static NarrativeProject.Game;
 
 namespace NarrativeProject
 {
@@ -12,6 +14,7 @@ namespace NarrativeProject
             game.Add(new Bathroom());
             game.Add(new AtticRoom());
             game.Add(new LivingRoom());
+            
 
             while (!game.IsGameOver())
             {

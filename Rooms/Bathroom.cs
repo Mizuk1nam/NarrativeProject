@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection.Emit;
+using static NarrativeProject.Game;
 
 namespace NarrativeProject.Rooms
 {
@@ -10,6 +12,7 @@ namespace NarrativeProject.Rooms
 The [mirror] in front of you reflects your depressed face.
 You can return to your [bedroom]. You may now acces the [attic].
 ";
+        
 
         internal override void ReceiveChoice(string choice)
         {
@@ -19,9 +22,11 @@ You can return to your [bedroom]. You may now acces the [attic].
                     Console.WriteLine("You relax in the bath. ");
                     break;
                 case "mirror":
-                    Console.WriteLine("You see the numbers 6969 written on the fog on your mirror.");
+                    
+
+                    Console.WriteLine("You see your depressed face in the mirror.");
                     break;
-                case "bedroom":
+                case "bedroom":                
                     Console.WriteLine("You return to your bedroom.");
                     Game.Transition<Bedroom>();
                     break;
