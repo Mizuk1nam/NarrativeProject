@@ -7,6 +7,8 @@ namespace NarrativeProject.Rooms
 
         internal override string CreateDescription() =>
 @"You are in your bedroom.
+You need to save your sister but you are trapped in your house.
+Find a way to exit your house
 The [door] in front of you leads to your living room.
 Your private [bathroom] is to your left.
 You know the entrance to your attic is in the bathroom
@@ -29,6 +31,7 @@ Another door leads you to your [living room].
                     if (!AtticRoom.isKeyCollected)
                     {
                         Console.WriteLine("The door is locked.");
+
                     }
                     else
                     {
