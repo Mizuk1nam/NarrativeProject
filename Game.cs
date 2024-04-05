@@ -62,7 +62,7 @@ namespace NarrativeProject
         }
         internal class Money
         {
-            internal int Amount { get; private set; }
+            public int Amount { get; set; }
 
             
             internal Money(int amount)
@@ -89,6 +89,7 @@ namespace NarrativeProject
         }
         public static class MoneyCounter
         {
+           
             public static Money money = new Money(0);
         }
     }
