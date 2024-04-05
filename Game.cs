@@ -21,7 +21,7 @@ namespace NarrativeProject
         }
 
         internal string CurrentRoomDescription => currentRoom.CreateDescription();
-
+        private Money money = new Money(0);
         internal void ReceiveChoice(string choice)
         {
             currentRoom.ReceiveChoice(choice);
@@ -50,7 +50,7 @@ namespace NarrativeProject
                 }
             }
         }
-        public class codeGen
+        internal class codeGen
         {
             private Random _random = new Random();
 
@@ -59,6 +59,37 @@ namespace NarrativeProject
                 int randomInt = _random.Next(1000, 10000);
                 return randomInt.ToString();
             }
+        }
+        internal class Money
+        {
+            internal int Amount { get; private set; }
+
+            
+            internal Money(int amount)
+            {
+                Amount = amount;
+                
+            }
+
+            internal void Add(int amount)
+            {
+                Amount += amount;
+            }
+
+            internal void Subtract(int amount)
+            {
+                Amount -= amount;
+            }
+
+            public override string ToString()
+            {
+                return $"{Amount}";
+            }
+            
+        }
+        public static class MoneyCounter
+        {
+            public static Money money = new Money(0);
         }
     }
 } 
