@@ -38,6 +38,9 @@ You know the entrance to your attic is in the bathroom
                         Game.Transition<LivingRoom>();
                     }
                     break;
+                case "street":
+                    Game.Transition<Street>();
+                    break;
                
                 default:
                     Console.WriteLine("Invalid command.");

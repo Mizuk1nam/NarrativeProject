@@ -10,7 +10,7 @@ namespace NarrativeProject.Rooms
         internal override string CreateDescription() =>
 @"In your bathroom, the [bath] is filled with hot water.
 The [mirror] in front of you reflects your depressed face.
-You can return to your [bedroom]. You may now acces the [attic].
+You can return to your [bedroom] . You may now acces the [attic].
 ";
         
 
