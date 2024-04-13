@@ -41,6 +41,9 @@ You know the entrance to your attic is in the bathroom
                 case "street":
                     Game.Transition<Street>();
                     break;
+                case "shop":
+                    Game.Transition<Shop>();
+                    break;  
                
                 default:
                     Console.WriteLine("Invalid command.");

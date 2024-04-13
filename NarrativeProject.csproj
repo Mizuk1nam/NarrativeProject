@@ -51,6 +51,7 @@
     <Compile Include="Rooms\Bathroom.cs" />
     <Compile Include="Rooms\Bedroom.cs" />
     <Compile Include="Rooms\Class1.cs" />
+    <Compile Include="Rooms\Class2.cs" />
     <Compile Include="Rooms\LivingRoom.cs" />
   </ItemGroup>
   <ItemGroup>

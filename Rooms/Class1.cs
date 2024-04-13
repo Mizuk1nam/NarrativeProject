@@ -26,6 +26,14 @@ namespace NarrativeProject.Rooms
                     if (count == 6)
                     {
                         Console.WriteLine("You see a shop, do you wish to enter? [Enter]");
+                        string cho1ce;
+                        cho1ce = Console.ReadLine();
+                        if (cho1ce == "Enter")
+                        {
+                            Console.WriteLine("You enter the shop");
+                            Game.Transition<Shop>();
+                        }
+                        
                     }
                     break;
                     
