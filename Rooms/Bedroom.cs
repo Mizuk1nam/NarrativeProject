@@ -41,7 +41,7 @@ You know the entrance to your attic is in the bathroom
                
                 default:
                     Console.WriteLine("Invalid command.");
-                    Console.WriteLine(MoneyCounter.money.Amount);
+                    
                     break;
             }
         }

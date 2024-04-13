@@ -93,5 +93,39 @@ namespace NarrativeProject
             public static Money money = new Money(0);
         }
     }
-} 
+    internal class HP
+    {
+        private int hp;
+
+        public int currentHP
+        {
+            get { return hp; }
+            private set { hp = value;}
+        }
+
+        public HP() 
+        {
+            currentHP = 100; 
+        }
+
+        public void TakeDamage(int damageAmount)
+        {
+            currentHP -= damageAmount;
+            if (currentHP < 0)
+            {
+                Game.Finish();
+            }
+        }
+
+        public void Heal(int healAmount)
+        {
+            currentHP += healAmount;
+            if (currentHP > 100)
+            {
+               currentHP = 100; 
+            }
+        }
+    }
+
+}
 
