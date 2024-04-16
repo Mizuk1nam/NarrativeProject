@@ -120,7 +120,7 @@ namespace NarrativeProject
 
     public static class HPCounter
     {
-        public static HP hp = new HP(0);
+        public static HP hp = new HP(100);
     }
 
 }

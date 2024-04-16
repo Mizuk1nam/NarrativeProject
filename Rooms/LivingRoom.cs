@@ -1,9 +1,5 @@
 ﻿using NarrativeProject.Rooms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static NarrativeProject.Game;
 
 namespace NarrativeProject
@@ -22,28 +18,7 @@ You can return to your [bedroom].
             switch (choice)
             {
                 case "wallet":
-                    bool moneyTaken = false;
-
-                    Console.WriteLine("You see a wallet, do you take it? [yes] or [no]");
-                    string answer = Console.ReadLine();
-
-                    if (answer == "yes" && !moneyTaken)
-                    {
-                        Console.WriteLine("You take the wallet and find $100");
-                        MoneyCounter.money.Amount += 100;
-                        Console.WriteLine("You now have: $" + MoneyCounter.money.Amount);
-                        moneyTaken = true;
-                    }
-                    else if (answer == "yes" && moneyTaken )
-                    {
-                        Console.WriteLine("You already took the money.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You put the wallet down and leave it be");
-                    }
-                    Console.WriteLine("You return to the living room");
-                    Game.Transition<LivingRoom>();
+                    Wallet.takeWallet();
                     break;
                 case "bedroom":
                     Console.WriteLine("You return to your bedroom.");
@@ -56,10 +31,34 @@ You can return to your [bedroom].
                 default:
                     Console.WriteLine("Invalid command.");
                     break;
-                    
             }
         }
     }
 
-    
+    internal class Wallet
+    {
+        private static bool moneyTaken = false;
+
+        public static void takeWallet()
+        {
+            Console.WriteLine("You see a wallet, do you take it? [yes] or [no]");
+            string answer = Console.ReadLine();
+
+            if (answer == "yes" && !moneyTaken)
+            {
+                Console.WriteLine("You take the wallet and find $100");
+                MoneyCounter.money.Amount += 100;
+                Console.WriteLine("You now have: $" + MoneyCounter.money.Amount);
+                moneyTaken = true;
+            }
+            else if (answer == "yes" && moneyTaken)
+            {
+                Console.WriteLine("You already took the money.");
+            }
+            else
+            {
+                Console.WriteLine("You put the wallet down and leave it be");
+            }
+        }
+    }
 }

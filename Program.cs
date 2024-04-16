@@ -12,7 +12,7 @@ namespace NarrativeProject
         
         static void Main(string[] args)
         {
-            Player player = new Player();
+           
             var game = new Game();
             game.Add(new Bedroom());
             game.Add(new Bathroom());

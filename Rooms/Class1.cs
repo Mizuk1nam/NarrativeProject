@@ -26,7 +26,7 @@ namespace NarrativeProject.Rooms
                     
                         count++ ;
                     Random random = new Random();
-                    if (random.Next(0, 2) == 0)
+                    if (random.Next(0, 10) == 0)
                     {
                         HPCounter.hp.Subtract(10);
 
