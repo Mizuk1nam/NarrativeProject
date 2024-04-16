@@ -15,11 +15,11 @@ namespace NarrativeProject.Rooms
         
         internal override void ReceiveChoice(string choice)
         {
-            HP playerHP = new HP(100);
+            
             switch (choice)
             {
                 case "stats":
-                    Console.WriteLine("Player's current HP: " + playerHP.CurrentHP);
+                    Console.WriteLine("Player's current HP: " + HPCounter.hp.Amount);
                     Console.WriteLine("Money: " + MoneyCounter.money.Amount.ToString());
                     break;
                 case "forward":
@@ -28,10 +28,10 @@ namespace NarrativeProject.Rooms
                     Random random = new Random();
                     if (random.Next(0, 2) == 0)
                     {
-                        playerHP.TakeDamage(10);
+                        HPCounter.hp.Subtract(10);
 
 
-                        Console.WriteLine("You tripped on a stick and lost 10 HP. Current HP: " + playerHP.CurrentHP);
+                        Console.WriteLine("You tripped on a stick and lost 10 HP. Current HP: " + HPCounter.hp.Amount);
                     }
                     Console.WriteLine("You can continue to walk [forward] or go [backward]");
                     Console.WriteLine("You walked " + count + " steps away from the house");

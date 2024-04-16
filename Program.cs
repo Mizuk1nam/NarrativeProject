@@ -2,13 +2,14 @@
 using System;
 using System.Xml.Serialization;
 using static NarrativeProject.Game;
+using static NarrativeProject.HP;
 
 namespace NarrativeProject
 {
 
     internal class Program
     {
-        Player player = new Player();
+        
         static void Main(string[] args)
         {
             Player player = new Player();

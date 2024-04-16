@@ -95,48 +95,34 @@ namespace NarrativeProject
     }
     public class HP
     {
-        private int currentHP;
-        private int maxHP;
+        public int Amount { get; set; }
 
-        public HP(int maxHP)
+        internal HP(int amount)
         {
-            this.maxHP = maxHP;
-            this.currentHP = maxHP;
+            Amount = amount;
         }
 
-        public int CurrentHP
+        internal void Add(int amount)
         {
-            get { return currentHP; }
-            set { currentHP = value; }
+            Amount += amount;
         }
 
-        public int MaxHP
+        internal void Subtract(int amount)
         {
-            get { return maxHP; }
+            Amount -= amount;
         }
 
-        public void TakeDamage(int damage)
+        public override string ToString()
         {
-            currentHP -= damage;
-            if (currentHP < 0)
-            {
-                currentHP = 0;
-            }
+            return $"{Amount}";
         }
-
-        public void Heal(int amount)
-        {
-            currentHP += amount;
-            if (currentHP > maxHP)
-            {
-                currentHP = maxHP;
-            }
-        }
-
-      
     }
 
-
+    public static class HPCounter
+    {
+        public static HP hp = new HP(0);
+    }
 
 }
+
 
