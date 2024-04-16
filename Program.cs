@@ -3,6 +3,7 @@ using System;
 using System.Xml.Serialization;
 using static NarrativeProject.Game;
 using static NarrativeProject.HP;
+using static NarrativeProject.Inventory;
 
 namespace NarrativeProject
 {
@@ -19,6 +20,12 @@ namespace NarrativeProject
             game.Add(new AtticRoom());
             game.Add(new LivingRoom());
             game.Add(new Street());
+            InventoryManager inventoryManager = new InventoryManager();
+            Item sword = new Item("Sword");
+            Item shield = new Item("Shield");
+
+
+
             game.Add(new Shop());
            
 

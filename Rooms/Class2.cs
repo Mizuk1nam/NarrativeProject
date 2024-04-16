@@ -8,7 +8,7 @@ namespace NarrativeProject.Rooms
     {
 
         internal override string CreateDescription() =>
-@"You now enter the shop. You have " + MoneyCounter.money.Amount.ToString() + "You can buy";
+@"You now enter the shop. You have " + MoneyCounter.money.Amount.ToString() + "You can buy a [heal] for 10$, [sword] 30$ ";
 
 
 

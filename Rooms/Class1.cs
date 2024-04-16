@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using static NarrativeProject.Game;
+using static NarrativeProject.Inventory;
 
 namespace NarrativeProject.Rooms
 {
@@ -21,6 +22,8 @@ namespace NarrativeProject.Rooms
                 case "stats":
                     Console.WriteLine("Player's current HP: " + HPCounter.hp.Amount);
                     Console.WriteLine("Money: " + MoneyCounter.money.Amount.ToString());
+                    Console.WriteLine("Items: " + inventoryManager.PrintInventory());
+                    
                     break;
                 case "forward":
                     

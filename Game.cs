@@ -122,7 +122,63 @@ namespace NarrativeProject
     {
         public static HP hp = new HP(100);
     }
+    public class Item
+    {
+        public string Name { get; set; }
 
+        public Item(string name)
+        {
+            Name = name;
+        }
+    }
+
+    public class Inventory
+    {
+        private List<Item> items;
+
+        public Inventory()
+        {
+            items = new List<Item>();
+        }
+
+        public void AddItem(Item item)
+        {
+            items.Add(item);
+        }
+
+        public void RemoveItem(Item item)
+        {
+            items.Remove(item);
+        }
+
+        public void PrintInventory()
+        {
+            foreach (var item in items)
+            {
+                Console.WriteLine(item.Name);
+            }
+        }
+        public class InventoryManager
+        {
+            private Inventory inventory;
+
+            public InventoryManager()
+            {
+                inventory = new Inventory();
+            }
+
+            public void AddItemToInventory(Item item)
+            {
+                inventory.AddItem(item);
+            }
+
+            public void PrintInventory()
+            {
+                inventory.PrintInventory();
+            }
+        }
+
+    }
 }
 
 
