@@ -5,10 +5,13 @@ using static NarrativeProject.Game;
 
 namespace NarrativeProject
 {
+
     internal class Program
     {
+        Player player = new Player();
         static void Main(string[] args)
         {
+            Player player = new Player();
             var game = new Game();
             game.Add(new Bedroom());
             game.Add(new Bathroom());

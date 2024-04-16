@@ -8,20 +8,32 @@ namespace NarrativeProject.Rooms
     {
 
         internal override string CreateDescription() =>
-@"You now find yourself in the street you can choose to walk [forward] or go [backward]
+@"You now find yourself in the street you can choose to walk [forward] or go [backward]. Check you stats? [stats]
 
 ";
         int count = 0;
         
         internal override void ReceiveChoice(string choice)
         {
-            
+            HP playerHP = new HP(100);
             switch (choice)
             {
+                case "stats":
+                    Console.WriteLine("Player's current HP: " + playerHP.CurrentHP);
+                    Console.WriteLine("Money: " + MoneyCounter.money.Amount.ToString());
+                    break;
                 case "forward":
                     
                         count++ ;
-                        Console.WriteLine("You can continue to walk [forward] or go [backward]");
+                    Random random = new Random();
+                    if (random.Next(0, 2) == 0)
+                    {
+                        playerHP.TakeDamage(10);
+
+
+                        Console.WriteLine("You tripped on a stick and lost 10 HP. Current HP: " + playerHP.CurrentHP);
+                    }
+                    Console.WriteLine("You can continue to walk [forward] or go [backward]");
                     Console.WriteLine("You walked " + count + " steps away from the house");
                     if (count == 6)
                     {

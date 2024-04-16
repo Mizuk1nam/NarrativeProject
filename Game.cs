@@ -64,11 +64,11 @@ namespace NarrativeProject
         {
             public int Amount { get; set; }
 
-            
+
             internal Money(int amount)
             {
                 Amount = amount;
-                
+
             }
 
             internal void Add(int amount)
@@ -85,47 +85,58 @@ namespace NarrativeProject
             {
                 return $"{Amount}";
             }
-            
+
         }
         public static class MoneyCounter
         {
-           
+
             public static Money money = new Money(0);
         }
     }
-    internal class HP
+    public class HP
     {
-        private int hp;
+        private int currentHP;
+        private int maxHP;
 
-        public int currentHP
+        public HP(int maxHP)
         {
-            get { return hp; }
-            private set { hp = value;}
+            this.maxHP = maxHP;
+            this.currentHP = maxHP;
         }
 
-        public HP() 
+        public int CurrentHP
         {
-            currentHP = 100; 
+            get { return currentHP; }
+            set { currentHP = value; }
         }
 
-        public void TakeDamage(int damageAmount)
+        public int MaxHP
         {
-            currentHP -= damageAmount;
+            get { return maxHP; }
+        }
+
+        public void TakeDamage(int damage)
+        {
+            currentHP -= damage;
             if (currentHP < 0)
             {
-                Game.Finish();
+                currentHP = 0;
             }
         }
 
-        public void Heal(int healAmount)
+        public void Heal(int amount)
         {
-            currentHP += healAmount;
-            if (currentHP > 100)
+            currentHP += amount;
+            if (currentHP > maxHP)
             {
-               currentHP = 100; 
+                currentHP = maxHP;
             }
         }
+
+      
     }
+
+
 
 }
 

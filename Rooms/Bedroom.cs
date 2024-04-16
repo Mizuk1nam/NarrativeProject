@@ -50,6 +50,7 @@ You know the entrance to your attic is in the bathroom
                     
                     break;
             }
+           
         }
     }
 }
