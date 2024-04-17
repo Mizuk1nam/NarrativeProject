@@ -55,9 +55,14 @@ You can return to your [bedroom].
             {
                 Console.WriteLine("You already took the money.");
             }
-            else
+            else if(answer == "no" ) 
             {
                 Console.WriteLine("You put the wallet down and leave it be");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Command");
+                Wallet.takeWallet();
             }
         }
     }
