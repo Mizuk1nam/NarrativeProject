@@ -119,20 +119,20 @@ namespace NarrativeProject
                 Console.WriteLine("You already have the maximum amount of HP");
                 Amount = 100; 
             }
+            
         }
 
 
         internal void Subtract(int amount)
         {
-            if (amount < 0)
+            Amount -= amount;
+            if (Amount <= 0)
             {
                 Console.WriteLine("You died");
-                
+                Game.Finish(); 
             }
-           
-            
-            
         }
+
 
         public override string ToString()
         {

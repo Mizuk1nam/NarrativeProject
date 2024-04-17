@@ -23,6 +23,8 @@ namespace NarrativeProject.Rooms
                 case "heal":
                     MoneyCounter.money.Subtract(10);
                     HPCounter.hp.Add(50);
+                    int hpnow = HPCounter.hp.Amount;
+                    if (hpnow = )
                     Console.WriteLine("You recieved a HP patch-up, Current HP: " + HPCounter.hp.Amount );
                     Console.WriteLine("You have $" + MoneyCounter.money.Amount);
                     return;
