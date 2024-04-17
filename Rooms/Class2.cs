@@ -27,6 +27,8 @@ namespace NarrativeProject.Rooms
                     Console.WriteLine("You have $" + MoneyCounter.money.Amount);
                     return;
                 case "sword":
+                    Inventory.AddItem("Sword", 1);
+
                     return;
                 case "shield":
                     return;
