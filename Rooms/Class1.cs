@@ -9,7 +9,7 @@ namespace NarrativeProject.Rooms
     {
 
         internal override string CreateDescription() =>
-@"You now find yourself in the street you can choose to walk [forward] or go [backward]. Check you stats? [stats]
+@"You now find yourself in the street you can choose to walk [forward] or go [backward]. Check your stats? [stats]
 
 ";
         int count = 0;
@@ -52,7 +52,16 @@ namespace NarrativeProject.Rooms
                             Console.WriteLine("You enter the shop");
                             Game.Transition<Shop>();
                         }
-                        
+                        else if (cho1ce == "enter")
+                            {
+                                Console.WriteLine("You enter the shop");
+                                Game.Transition<Shop>();
+                            }
+                        else
+                        {
+                            Console.WriteLine("Invalid Command");
+                        }
+
                     }
                     break;
                     

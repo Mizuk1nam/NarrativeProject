@@ -76,9 +76,18 @@ namespace NarrativeProject
                 Amount += amount;
             }
 
-            internal void Subtract(int amount)
+            internal bool Subtract(int amount)
             {
-                Amount -= amount;
+                if (Amount - amount < 0)
+                {
+                    Console.WriteLine("Sorry, you do not have enough money to buy this.");
+                    return false; 
+                }
+                else
+                {
+                    Amount -= amount;
+                    return true; 
+                }
             }
 
             public override string ToString()
@@ -105,11 +114,24 @@ namespace NarrativeProject
         internal void Add(int amount)
         {
             Amount += amount;
+            if (Amount > 100)
+            {
+                Console.WriteLine("You already have the maximum amount of HP");
+                Amount = 100; 
+            }
         }
+
 
         internal void Subtract(int amount)
         {
-            Amount -= amount;
+            if (amount < 0)
+            {
+                Console.WriteLine("You died");
+                
+            }
+           
+            
+            
         }
 
         public override string ToString()
