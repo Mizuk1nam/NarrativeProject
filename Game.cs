@@ -122,63 +122,75 @@ namespace NarrativeProject
     {
         public static HP hp = new HP(100);
     }
+    
+
     public class Item
     {
         public string Name { get; set; }
+        public int Quantity { get; set; }
 
-        public Item(string name)
+        public Item(string name, int quantity)
         {
             Name = name;
+            Quantity = quantity;
+        }
+
+        public void addItem(int amount)
+        {
+            Quantity += amount;
+        }
+
+        public void subItem(int amount)
+        {
+            Quantity -= amount;
+            if (Quantity < 0)
+            {
+                Quantity = 0; 
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}: {Quantity}";
         }
     }
 
-    public class Inventory
+    public static class Inventory
     {
-        private List<Item> items;
+        public static List<Item> Items = new List<Item>
+    {
+        new Item("Sword", 0),
+        new Item("Shield", 0)
+    };
 
-        public Inventory()
+        public static void AddItem(string name, int quantity)
         {
-            items = new List<Item>();
-        }
-
-        public void AddItem(Item item)
-        {
-            items.Add(item);
-        }
-
-        public void RemoveItem(Item item)
-        {
-            items.Remove(item);
-        }
-
-        public void PrintInventory()
-        {
-            foreach (var item in items)
+            var item = Items.Find(i => i.Name == name);
+            if (item != null)
             {
-                Console.WriteLine(item.Name);
+                item.addItem(quantity);
             }
-        }
-        public class InventoryManager
-        {
-            private Inventory inventory;
-
-            public InventoryManager()
+            else
             {
-                inventory = new Inventory();
-            }
-
-            public void AddItemToInventory(Item item)
-            {
-                inventory.AddItem(item);
-            }
-
-            public void PrintInventory()
-            {
-                inventory.PrintInventory();
+                Items.Add(new Item(name, quantity));
             }
         }
 
+        public static void SubtractItem(string name, int quantity)
+        {
+            var item = Items.Find(i => i.Name == name);
+            if (item != null)
+            {
+                item.subItem(quantity);
+            }
+        }
+
+        public static Item GetItem(string name)
+        {
+            return Items.Find(i => i.Name == name);
+        }
     }
+
 }
 
 

@@ -22,8 +22,12 @@ namespace NarrativeProject.Rooms
                 case "stats":
                     Console.WriteLine("Player's current HP: " + HPCounter.hp.Amount);
                     Console.WriteLine("Money: " + MoneyCounter.money.Amount.ToString());
-                    Console.WriteLine("Items: " + inventoryManager.PrintInventory());
-                    
+                    Console.WriteLine("Items: "  );
+                    foreach (var item in Inventory.Items)
+                    {
+                        Console.WriteLine(item);
+                    }
+
                     break;
                 case "forward":
                     

@@ -20,9 +20,7 @@ namespace NarrativeProject
             game.Add(new AtticRoom());
             game.Add(new LivingRoom());
             game.Add(new Street());
-            InventoryManager inventoryManager = new InventoryManager();
-            Item sword = new Item("Sword");
-            Item shield = new Item("Shield");
+           
 
 
 
