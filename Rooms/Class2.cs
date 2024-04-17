@@ -17,6 +17,7 @@ namespace NarrativeProject.Rooms
             switch (choice)
             {
                 case "return":
+                    Console.WriteLine("You return back to the street");
                     Game.Transition<Street>();
                     return;
                 case "heal":
@@ -24,6 +25,13 @@ namespace NarrativeProject.Rooms
                     HPCounter.hp.Add(50);
                     Console.WriteLine("You recieved a HP patch-up, Current HP: " + HPCounter.hp.Amount );
                     Console.WriteLine("You have $" + MoneyCounter.money.Amount);
+                    return;
+                case "sword":
+                    return;
+                case "shield":
+                    return;
+                default:
+                    Console.WriteLine("Invalid Command");
                     return;
 
             }
