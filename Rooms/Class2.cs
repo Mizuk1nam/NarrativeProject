@@ -27,10 +27,16 @@ namespace NarrativeProject.Rooms
                     Console.WriteLine("You have $" + MoneyCounter.money.Amount);
                     return;
                 case "sword":
+                    MoneyCounter.money.Subtract(30);
                     Inventory.AddItem("Sword", 1);
-
+                    Console.WriteLine("You purchased a sword");
+                    Console.WriteLine("You have $" + MoneyCounter.money.Amount);
                     return;
                 case "shield":
+                    MoneyCounter.money.Subtract(40);
+                    Inventory.AddItem("Shield", 1);
+                    Console.WriteLine("You purchased a shield");
+                    Console.WriteLine("You have $" + MoneyCounter.money.Amount);
                     return;
                 default:
                     Console.WriteLine("Invalid Command");
