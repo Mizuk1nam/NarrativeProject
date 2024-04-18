@@ -116,7 +116,7 @@ namespace NarrativeProject
             Amount += amount;
             if (Amount > 100)
             {
-                Console.WriteLine("You already have the maximum amount of HP");
+                
                 Amount = 100; 
             }
             

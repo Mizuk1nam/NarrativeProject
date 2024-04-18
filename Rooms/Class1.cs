@@ -42,6 +42,7 @@ namespace NarrativeProject.Rooms
                     }
                     Console.WriteLine("You can continue to walk [forward] or go [backward]");
                     Console.WriteLine("You walked " + count + " steps away from the house");
+
                     if (count == 6)
                     {
                         Console.WriteLine("You see a shop, do you wish to enter? [Enter]");
