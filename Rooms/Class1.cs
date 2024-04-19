@@ -74,12 +74,12 @@ namespace NarrativeProject.Rooms
                         if (cho1ce == "Enter")
                         {
                             Console.WriteLine("You enter the shack");
-                            Game.Transition<Shop>();
+                            Game.Transition<Shack>();
                         }
                         else if (cho1ce == "enter")
                         {
-                            Console.WriteLine("You enter the shop");
-                            Game.Transition<Shop>();
+                            Console.WriteLine("You enter the shack");
+                            Game.Transition<Shack>();
                         }
                         else
                         {

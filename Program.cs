@@ -20,7 +20,7 @@ namespace NarrativeProject
             game.Add(new AtticRoom());
             game.Add(new LivingRoom());
             game.Add(new Street());
-           
+           game.Add(new Shack());
 
 
 
