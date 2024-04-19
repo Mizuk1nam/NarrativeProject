@@ -40,6 +40,8 @@ namespace NarrativeProject
             Console.ReadLine();
 
             //sources : https://stackoverflow.com/questions/7809745/linq-code-to-select-one-item
+            // https://www.howtogeek.com/devops/what-are-enums-enumerated-types-in-programming-and-why-are-they-useful/
+            //https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.find?view=net-8.0
         }
     }
 }
