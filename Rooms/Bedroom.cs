@@ -57,6 +57,9 @@ You know the entrance to your attic is in the bathroom
                         Console.WriteLine(item);
                     }
                     break;
+                case "shack":
+                    Game.Transition<Shack>();
+                    break;
 
                 default:
                     Console.WriteLine("Invalid command.");
