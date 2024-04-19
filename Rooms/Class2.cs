@@ -8,7 +8,7 @@ namespace NarrativeProject.Rooms
     {
 
         internal override string CreateDescription() =>
-@"You now enter the shop. You have " + MoneyCounter.money.Amount.ToString() + "$ You can buy a [heal] for 10$, [sword] 30$, [shield] 40$, a useless [stick] for 1$ and a [cookie] for 5$ or you can choose to [return]   ";
+@"You now enter the shop. You have " + MoneyCounter.money.Amount.ToString() + "$ You can buy a [heal] for 10$, [sword] 30$, [shield] 40$, a useless [stick] for 1$ a [cookie] for 5$, and a [book] for 15$ or you can choose to [return]   ";
 
 
 
@@ -71,6 +71,19 @@ namespace NarrativeProject.Rooms
                         Console.WriteLine("You do not have enough money to buy this");
                     }
                     return;
+                case "book":
+                    if (moneynow >= 1)
+                    {
+                        MoneyCounter.money.Subtract(15);
+                        Inventory.AddItem("Book", 1);
+                        Console.WriteLine("You purchased a Book");
+                        Console.WriteLine("You have $" + MoneyCounter.money.Amount);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You do not have enough money to buy this");
+                    }
+                    break; 
                 case "stick": //easter egg
                     if (moneynow >= 1)
                     {

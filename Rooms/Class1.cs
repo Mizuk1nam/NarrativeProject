@@ -47,7 +47,7 @@ namespace NarrativeProject.Rooms
 
                     if (count == 6)
                     {
-                        Console.WriteLine("You see a shop, do you wish to enter? [Enter]");
+                        Console.WriteLine("You see a shop. Do you wish to [enter] or keep going [forward] or go [backward]?");
                         string cho1ce;
                         cho1ce = Console.ReadLine();
                         if (cho1ce == "Enter")
@@ -63,10 +63,12 @@ namespace NarrativeProject.Rooms
                         else if (cho1ce == "forward")
                         {
                             count++;
+                            Console.WriteLine("You walked " + count + " steps away from the house");
                         }
                         else if (cho1ce == "backward")
                         {
                             count--;
+                            Console.WriteLine("You walked " + count + " steps away from the house");
                         }
                         else
                         {
@@ -76,7 +78,7 @@ namespace NarrativeProject.Rooms
                     }
                     if (count == 12)
                     {
-                        Console.WriteLine("You see an abandoned shack. Do you wish to [enter]?");
+                        Console.WriteLine("You see an abandoned shack. Do you wish to [enter] or keep going [forward] or go [backward]? " );
                         string cho1ce;
                         cho1ce = Console.ReadLine();
                         if (cho1ce == "Enter")
@@ -93,10 +95,12 @@ namespace NarrativeProject.Rooms
                         else if (cho1ce == "forward")
                         {
                             count++;
+                            Console.WriteLine("You walked " + count + " steps away from the house");
                         }
                         else if (cho1ce == "backward")
                         {
                             count--;
+                            Console.WriteLine("You walked " + count + " steps away from the house");
                         }
                         else
                         {

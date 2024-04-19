@@ -38,6 +38,8 @@ namespace NarrativeProject
 
             Console.WriteLine("END");
             Console.ReadLine();
+
+            //sources : https://stackoverflow.com/questions/7809745/linq-code-to-select-one-item
         }
     }
 }

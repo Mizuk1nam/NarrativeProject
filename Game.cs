@@ -181,7 +181,8 @@ namespace NarrativeProject
         Sword,
         Shield,
         Stick,
-        Cookie
+        Cookie,
+        Book
     }
     public static class Inventory
     {
@@ -190,7 +191,8 @@ namespace NarrativeProject
         new Item("Sword", 0),
         new Item("Shield", 0),
             new Item ("Stick", 0),
-            new Item("Cookie", 0)
+            new Item("Cookie", 0),
+             new Item("Book", 0)
     };
 
         public static void AddItem(string name, int quantity)
