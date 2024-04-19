@@ -42,7 +42,7 @@ namespace NarrativeProject.Rooms
 
                         Console.WriteLine("You tripped on a stick and lost 10 HP. Current HP: " + HPCounter.hp.Amount);
                     }
-                    Console.WriteLine("You can continue to walk [forward] or go [backward]");
+                   
                     Console.WriteLine("You walked " + count + " steps away from the house");
 
                     if (count == 6)
@@ -60,6 +60,14 @@ namespace NarrativeProject.Rooms
                                 Console.WriteLine("You enter the shop");
                                 Game.Transition<Shop>();
                             }
+                        else if (cho1ce == "forward")
+                        {
+                            count++;
+                        }
+                        else if (cho1ce == "backward")
+                        {
+                            count--;
+                        }
                         else
                         {
                             Console.WriteLine("Invalid Command");
@@ -68,7 +76,7 @@ namespace NarrativeProject.Rooms
                     }
                     if (count == 12)
                     {
-                        Console.WriteLine("You see an abandoned shack. Do you wish to enter?");
+                        Console.WriteLine("You see an abandoned shack. Do you wish to [enter]?");
                         string cho1ce;
                         cho1ce = Console.ReadLine();
                         if (cho1ce == "Enter")
@@ -76,15 +84,35 @@ namespace NarrativeProject.Rooms
                             Console.WriteLine("You enter the shack");
                             Game.Transition<Shack>();
                         }
+                        
                         else if (cho1ce == "enter")
                         {
                             Console.WriteLine("You enter the shack");
                             Game.Transition<Shack>();
                         }
+                        else if (cho1ce == "forward")
+                        {
+                            count++;
+                        }
+                        else if (cho1ce == "backward")
+                        {
+                            count--;
+                        }
                         else
                         {
                             Console.WriteLine("Invalid Command");
                         }
+                        
+
+                    }
+                    if (count == 15)
+                    {
+                        Console.WriteLine("Hey buddy you might want to turn back, it's unsafe from this point");
+                    }
+                    if (count == 20)
+                    {
+                        Console.WriteLine("Honestly, you were warned to turn back, A serial killer comes out of a bush and stabs you");
+                        HPCounter.hp.Subtract(100);
                     }
                     break;
                     
