@@ -176,13 +176,21 @@ namespace NarrativeProject
             return $"{Name}: {Quantity}";
         }
     }
-
+    public enum ItemType
+    {
+        Sword,
+        Shield,
+        Stick,
+        Cookie
+    }
     public static class Inventory
     {
         public static List<Item> Items = new List<Item>
     {
         new Item("Sword", 0),
-        new Item("Shield", 0)
+        new Item("Shield", 0),
+            new Item ("Stick", 0),
+            new Item("Cookie", 0)
     };
 
         public static void AddItem(string name, int quantity)

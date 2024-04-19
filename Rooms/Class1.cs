@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Runtime.InteropServices;
 using static NarrativeProject.Game;
 using static NarrativeProject.Inventory;
@@ -26,6 +27,7 @@ namespace NarrativeProject.Rooms
                     foreach (var item in Inventory.Items)
                     {
                         Console.WriteLine(item);
+                       
                     }
 
                     break;
@@ -63,6 +65,26 @@ namespace NarrativeProject.Rooms
                             Console.WriteLine("Invalid Command");
                         }
 
+                    }
+                    if (count == 12)
+                    {
+                        Console.WriteLine("You see an abandoned shack. Do you wish to enter?");
+                        string cho1ce;
+                        cho1ce = Console.ReadLine();
+                        if (cho1ce == "Enter")
+                        {
+                            Console.WriteLine("You enter the shack");
+                            Game.Transition<Shop>();
+                        }
+                        else if (cho1ce == "enter")
+                        {
+                            Console.WriteLine("You enter the shop");
+                            Game.Transition<Shop>();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Command");
+                        }
                     }
                     break;
                     

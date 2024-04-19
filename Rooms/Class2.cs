@@ -8,7 +8,8 @@ namespace NarrativeProject.Rooms
     {
 
         internal override string CreateDescription() =>
-@"You now enter the shop. You have " + MoneyCounter.money.Amount.ToString() + "$ You can buy a [heal] for 10$, [sword] 30$, [shield] 40$ or you can choose to [return]  ";
+@"You now enter the shop. You have " + MoneyCounter.money.Amount.ToString() + "$ You can buy a [heal] for 10$, [sword] 30$, [shield] 40$, a useless [stick] for 1$ and a [cookie] for 5$ or you can choose to [return]   ";
+
 
 
 
@@ -70,6 +71,41 @@ namespace NarrativeProject.Rooms
                         Console.WriteLine("You do not have enough money to buy this");
                     }
                     return;
+                case "stick": //easter egg
+                    if (moneynow >= 1)
+                    {
+                        MoneyCounter.money.Subtract(1);
+                        Inventory.AddItem("Stick", 1);
+                        Console.WriteLine("You purchased a useless stick... Congratulations I guess");
+                        Console.WriteLine("You have $" + MoneyCounter.money.Amount);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You do not have enough money to buy this... How are you this broke. Here just have it");
+                        Inventory.AddItem("Stick", 1);
+                    }
+                    return;
+                case "cookie":
+                    if (moneynow >= 1)
+                    {
+                        MoneyCounter.money.Subtract(5);
+                        Inventory.AddItem("Cookie", 1);
+                        Console.WriteLine("You purchased a Cookie!");
+                        Console.WriteLine("You have $" + MoneyCounter.money.Amount);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You do not have enough money to buy this");
+                        
+                    }
+                    return;
+                    //tests
+                case "testaddmoney":
+                    MoneyCounter.money.Add(100
+                        );return;
+                case "testsubmoney":
+                    MoneyCounter.money.Subtract(100)
+                        ;return;
                 default:
                     Console.WriteLine("Invalid Command");
                     return;
