@@ -41,7 +41,7 @@ Played before? Load stats [load]
                 case "load":
                     LoadData.LoadPlayerData();
                     Console.WriteLine("Loaded data");
-                    Game.Transition<Street>();
+                    
                     break; 
                     //from here just tests to not run to whole game to see if code works
                 case "street":
