@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using static NarrativeProject.Game;
+using System.IO;
+using System.Linq;
 
 namespace NarrativeProject
 {
@@ -81,12 +84,12 @@ namespace NarrativeProject
                 if (Amount - amount < 0)
                 {
                     Console.WriteLine("Sorry, you do not have enough money to buy this.");
-                    return false; 
+                    return false;
                 }
                 else
                 {
                     Amount -= amount;
-                    return true; 
+                    return true;
                 }
             }
 
@@ -116,10 +119,10 @@ namespace NarrativeProject
             Amount += amount;
             if (Amount > 100)
             {
-                
-                Amount = 100; 
+
+                Amount = 100;
             }
-            
+
         }
 
 
@@ -129,7 +132,7 @@ namespace NarrativeProject
             if (Amount <= 0)
             {
                 Console.WriteLine("You died");
-                Game.Finish(); 
+                Game.Finish();
             }
         }
 
@@ -144,7 +147,7 @@ namespace NarrativeProject
     {
         public static HP hp = new HP(100);
     }
-    
+
 
     public class Item
     {
@@ -167,7 +170,7 @@ namespace NarrativeProject
             Quantity -= amount;
             if (Quantity < 0)
             {
-                Quantity = 0; 
+                Quantity = 0;
             }
         }
 
@@ -222,7 +225,51 @@ namespace NarrativeProject
             return Items.Find(i => i.Name == name);
         }
     }
-
+    internal static class LoadData
+    {
+        internal static void LoadPlayerData()
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader("player_data.txt"))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (line.StartsWith("HP: "))
+                        {
+                            int hp = int.Parse(line.Substring(4));
+                            HPCounter.hp.Amount = hp;
+                        }
+                        else if (line.StartsWith("Money: "))
+                        {
+                            int money = int.Parse(line.Substring(7));
+                            MoneyCounter.money.Amount = money;
+                        }
+                        else if (line.StartsWith("Items: "))
+                        {
+                            string[] items = line.Substring(7).Split(',');
+                            foreach (string item in items)
+                            {
+                                string[] parts = item.Trim().Split(':');
+                                string itemName = parts[0];
+                                int quantity = int.Parse(parts[1]);
+                                Inventory.AddItem(itemName, quantity);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Player data file not found. Starting with default values.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error loading player data: " + ex.Message);
+            }
+        }
+    }
 }
 
 

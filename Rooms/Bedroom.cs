@@ -13,7 +13,7 @@ Find a way to exit your house
 The [door] in front of you leads to your living room.
 Your private [bathroom] is to your left.
 You know the entrance to your attic is in the bathroom
-
+Played before? Load stats [load]
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -38,6 +38,11 @@ You know the entrance to your attic is in the bathroom
                         Game.Transition<LivingRoom>();
                     }
                     break;
+                case "load":
+                    LoadData.LoadPlayerData();
+                    Console.WriteLine("Loaded data");
+                    Game.Transition<Street>();
+                    break; 
                     //from here just tests to not run to whole game to see if code works
                 case "street":
                     Game.Transition<Street>();
@@ -60,7 +65,7 @@ You know the entrance to your attic is in the bathroom
                 case "shack":
                     Game.Transition<Shack>();
                     break;
-
+                    
                 default:
                     Console.WriteLine("Invalid command.");
                     

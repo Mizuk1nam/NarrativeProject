@@ -17,13 +17,21 @@ namespace NarrativeProject.Rooms
                     Game.Transition<Street>();
                     break;
                 case "room":
-                    Console.WriteLine("You feel suspense as you open the door not knowing what to expect");
-                    Console.WriteLine("You push the door open");
-                    Console.WriteLine("You see, your SISTER turned into a zombie!");
-                    Console.WriteLine("This frigthens you.. to the point where you WAKE UP");
-                    Console.WriteLine("You realize.. it was all a dreammm.... (Super anticlimatic)");
-                    Console.WriteLine("Congratulations, you have completed this game!");
-                    Game.Finish();
+                    string[] endLine = {
+            "You feel suspense as you open the door not knowing what to expect",
+            "You push the door open",
+            "You see, your SISTER turned into a zombie!",
+            "This frightens you.. to the point where you WAKE UP",
+            "You realize.. it was all a dreammm.... (Super anticlimactic)",
+            "Congratulations, you have completed this game!"
+        };
+
+                    foreach (string line in endLine)
+                    {
+                        Console.WriteLine(line);
+                    }
+            
+            Game.Finish();
                     break;
 
             }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using static NarrativeProject.Game;
@@ -10,7 +11,7 @@ namespace NarrativeProject.Rooms
     {
 
         internal override string CreateDescription() =>
-@"You now find yourself in the street you can choose to walk [forward] or go [backward]. Check your stats? [stats]
+@"You now find yourself in the street you can choose to walk [forward] or go [backward]. Check your stats? [stats]. Save stats? [save]
 
 ";
         int count = 0;
@@ -136,11 +137,28 @@ namespace NarrativeProject.Rooms
 
                     
                     break;
+                case "save":
+                    using (StreamWriter writer = new StreamWriter("player_data.txt"))
+                    {
+                        writer.WriteLine("Player's current HP: " + HPCounter.hp.Amount);
+                        writer.WriteLine("Money: " + MoneyCounter.money.Amount.ToString());
+                        writer.WriteLine("Items:");
+                        foreach (var item in Inventory.Items)
+                        {
+                            writer.WriteLine(item);
+                        }
+                    }
+                    Console.WriteLine("You have saved your stats");
+                    break;
                 default:
                     Console.WriteLine("Invalid command.");
 
                     break;
             }
+           
+            
+            
         }
     }
 }
+
